@@ -1,24 +1,22 @@
-import MovieGrid from '../components/MovieGrid';
+import MovieCard from '../components/MovieCard'
 
-function Favorites() {
-  // Placeholder - students will implement localStorage retrieval
-  const favoriteMovies = [];
+function Favorites({ favorites, onToggleFavorite }) {
+  if (favorites.length === 0) {
+    return <p style={{ padding: '2rem' }}>No favorites yet.</p>
+  }
 
   return (
-    <main className="main-content">
-      <div className="content-header">
-        <h2>My Favorites</h2>
-        <p>Your saved movies collection</p>
-      </div>
-      {favoriteMovies.length > 0 ? (
-        <MovieGrid movies={favoriteMovies} />
-      ) : (
-        <div className="empty-state">
-          <p>No favorite movies yet. Start adding some from the home page!</p>
-        </div>
-      )}
-    </main>
-  );
-};
+    <div className="movie-grid">
+      {favorites.map(movie => (
+        <MovieCard
+          key={movie.id}
+          movie={movie}
+          isFavorite={true}
+          onToggleFavorite={onToggleFavorite}
+        />
+      ))}
+    </div>
+  )
+}
 
-export default Favorites;
+export default Favorites

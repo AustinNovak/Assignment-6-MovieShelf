@@ -242,3 +242,31 @@ body {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.movie-card {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+.movie-card p {
+  margin-bottom: 0.75rem;
+}
